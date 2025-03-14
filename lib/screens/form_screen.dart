@@ -44,7 +44,7 @@ class _FormScreenState extends State<FormScreen> {
         await prefs.setInt('num_generations', generations);
         await prefs.setDouble('mutation_rate', mutationRate);
 
-        final uri = Uri.parse("http://192.168.1.3:5000/run-genetic-algorithm");
+        final uri = Uri.parse("http://172.16.2.77:5000/run-genetic-algorithm");
         final request = http.MultipartRequest('POST', uri)
           ..fields['pop_size'] = popSize.toString()
           ..fields['num_generations'] = generations.toString()

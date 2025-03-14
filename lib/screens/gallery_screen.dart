@@ -31,18 +31,16 @@ class _GalleryScreenState extends State<GalleryScreen> {
       orElse: () => albums.first,
     );
 
-    if (imageGeneratorAlbum != null) {
-      final List<AssetEntity> images =
-          await imageGeneratorAlbum.getAssetListRange(
-        start: 0,
-        end: 100,
-      );
+    final List<AssetEntity> images =
+        await imageGeneratorAlbum.getAssetListRange(
+      start: 0,
+      end: 100,
+    );
 
-      setState(() {
-        _images = images;
-        _isLoading = false;
-      });
-    }
+    setState(() {
+      _images = images;
+      _isLoading = false;
+    });
   }
 
   Future<void> _openImage(AssetEntity imageEntity) async {
